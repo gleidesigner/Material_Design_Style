@@ -7,6 +7,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
+        android:id="@+id/container_drawer_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FB8C00">
@@ -19,5 +20,11 @@
             android:src="@drawable/flores"/>
     </LinearLayout>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/drawer_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>
