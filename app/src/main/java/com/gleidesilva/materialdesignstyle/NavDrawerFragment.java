@@ -68,12 +68,12 @@ public class NavDrawerFragment extends Fragment {
                 getActivity().invalidateOptionsMenu();
             }
 
-            @Override
+/*            @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 if (slideOffset < 0.6 ){
                     toolbar.setAlpha(1 - slideOffset);
                 }
-            }
+            }*/
         };
 
         if (!mUserLearnedDrawer && mFromSaveIdInstanceState) {

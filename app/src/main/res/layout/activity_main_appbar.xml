@@ -4,11 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar" />
+
+    <!--<include-->
+        <!--android:id="@+id/login"-->
+        <!--layout="@layout/content_layout_login" />-->
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -18,7 +23,8 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@color/background_floating_material_light"/>
 
         <fragment
             android:id="@+id/fragment_navigation_drawer"
