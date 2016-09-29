@@ -9,10 +9,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/common_ic_googleplayservices"/>
+        android:src="@drawable/common_full_open_on_phone"/>
 
     <TextView
-        android:id="@+id/list_text1"
+        android:id="@+id/list_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"

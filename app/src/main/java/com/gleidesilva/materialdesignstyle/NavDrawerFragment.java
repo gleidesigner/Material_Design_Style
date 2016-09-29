@@ -8,12 +8,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -32,7 +36,7 @@ public class NavDrawerFragment extends Fragment {
     private static final String KEY_USER_LEARNED_DRAWER = "user_learned_drawer";
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
-
+    private MyAdpater adpater;
     private boolean mUserLearnedDrawer;
     private boolean mFromSaveIdInstanceState;
     private View containView;
@@ -62,7 +66,26 @@ public class NavDrawerFragment extends Fragment {
 
         View layoutView = inflater.inflate(R.layout.fragment_nav_drawer, container, false);
         recyclerView = (RecyclerView) layoutView.findViewById(R.id.drawer_list);
+        adpater = new MyAdpater(getActivity(), getData());
+        recyclerView.setAdapter(adpater);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         return layoutView;
+    }
+
+    public static List<Information> getData(){
+        List<Information> data = new ArrayList<>();
+        int[] icons = {R.drawable.ic_number1, R.drawable.ic_number2, R.drawable.ic_number3, R.drawable.ic_number4};
+        String[] titles = {"Facebook", "Youtube", "Yahoo", "Email"};
+
+        for (int i = 0; i < titles.length && i < icons.length; i++) {
+            Information current = new Information();
+            current.iconId = icons[i];
+            current.title = titles[i];
+            data.add(current);
+        }
+
+        return data;
     }
 
     public void setUp(int fragmentId, DrawerLayout drawerLayout, final Toolbar toolbar) {
